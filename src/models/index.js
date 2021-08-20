@@ -7,7 +7,14 @@ const { Sequelize, DataTypes } = require('sequelize');
 const food = require('./food');
 const clothes = require('./clothes')
 
-var sequelize = new Sequelize(POSTGRES_URI, {});
+var sequelize = new Sequelize(POSTGRES_URI, {
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false,
+        }
+    }
+});
 
 module.exports = {
     db: sequelize,
