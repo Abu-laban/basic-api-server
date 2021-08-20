@@ -1,7 +1,7 @@
 'use strict';
 
 require("dotenv").config();
-const POSTGRES_URI = process.env.POSTGRES_URI;
+const POSTGRES_URI = process.env.DATABASE_URL;
 const { Sequelize, DataTypes } = require('sequelize');
 
 const food = require('./food');

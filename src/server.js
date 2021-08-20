@@ -15,6 +15,10 @@ const clothesRouter = require('./routes/clothes')
 app.use(express.json());
 app.use(loggerMiddleware);
 
+app.get('/', (req, res) => {
+    res.send('Hello 👋 ')
+})
+
 app.use(foodRouter)
 app.use(clothesRouter)
 
